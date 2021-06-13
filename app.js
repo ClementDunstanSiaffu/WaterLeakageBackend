@@ -6,5 +6,5 @@ const routes = require('./routes')
 const PORT = process.env.PORT || 5000
 app.get("/leta/:flowrate",routes.leta)
 app.get("/pata",routes.pata)
-
+app.get("/last",routes.last)
 app.listen(PORT)

@@ -24,3 +24,13 @@ exports.pata = (req,res)=>{
         }
     })
 }
+
+exports.last = async(req,res)=>{
+    const docs  = await WaterFlow.find((err,docs)=>{
+        if(!err){
+            return docs
+        }
+    })
+    const last_item = docs[docs.length-1]
+    res.json(last_item.flowrate)
+}
