@@ -26,11 +26,16 @@ exports.pata = (req,res)=>{
 }
 
 exports.last = async(req,res)=>{
-    const docs  = await WaterFlow.find((err,docs)=>{
-        if(!err){
-            return docs
-        }
-    })
-    const last_item = docs[docs.length-1]
-    res.json(last_item.flowrate)
+    try{
+        const docs  = await WaterFlow.find((err,docs)=>{
+            if(!err){
+                return docs
+            }
+        })
+        const last_item = docs[docs.length-1]
+        res.send(`${last_item.flowrate}`)
+    }catch(err){
+        console.log(err)
+    }
+    
 }

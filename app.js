@@ -3,7 +3,7 @@ const express = require("express")
 const app = express()
 const path = require('path')
 const routes = require('./routes')
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT ||8080
 app.get("/leta/:flowrate",routes.leta)
 app.get("/pata",routes.pata)
 app.get("/last",routes.last)
